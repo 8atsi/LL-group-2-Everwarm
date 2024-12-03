@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--this is the top thingy    -->
+    <div class="navbar">             
+        <ul class="nav-links">
+            <li><a href="#">EverWarm</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>        
+    </div>
+    <!--this is the content stuff    -->
+    <div class="gradient">
+        <h2>Scroll down</h2>
+    </div>
+    <div class="content">
+        <h1 class="fade-in">Welcome</h1>
+        <h1 class="fade-in right">To</h1>
+        <h1 class="fade-in">Group</h1>
+        <h1 class="fade-in right">2</h1>
+        <h1 class="fade-in">Product</h1>
+    </div>
+
+    <p class="anim"><span class="ever">Ever</span><span id="parallax-text" class="warm">Warm</span></p>
+
+    <div id="about" class="section">
+        <div class="container">
+            <div class="about">
+                <div class="text-about">
+                    <h2>TEST</h2>
+                    <p>Ever warm is group 2's chosen product. We have conducted this as our item because of our brainstorming ideas frfr</p>
+                </div>
+                <div class="image-about-container">
+
+                    <img src="/img.avif" class="image-about">
+                </div>
+                    <div class="paragraph">
+                    
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel metus dictum odio consequat porta vel eget est. Donec a rhoncus justo. Suspendisse dignissim lacus sit amet turpis iaculis suscipit. Praesent cursus commodo rutrum. Fusce sollicitudin mauris pretium, tempor eros vel, lobortis massa. Maecenas et massa congue, eleifend ex at, aliquet ante. Donec elementum neque at mauris imperdiet fermentum. Fusce mollis vestibulum dui</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel metus dictum odio consequat porta vel eget est. Donec a rhoncus justo. Suspendisse dignissim lacus sit amet turpis iaculis suscipit. Praesent cursus commodo rutrum. Fusce sollicitudin mauris pretium, tempor eros vel, lobortis massa. Maecenas et massa congue, eleifend ex at, aliquet ante. Donec elementum neque at mauris imperdiet fermentum. Fusce mollis vestibulum dui.</p>
+                </div>
+            </div>
+            <div>
+              
+
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
+
+
+<script>
+    
+    // parallax effect for "EverWarm" :p
+    const parallaxText = document.getElementById('parallax-text');
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        const newFontSize = 50 + scrollY / 15; // Adjust size
+        const newOpacity = Math.min(0.2 + scrollY / 500, 1); // Adjust opacity
+        parallaxText.style.fontSize = `${newFontSize}px`;
+        parallaxText.style.opacity = newOpacity;
+    });
+
+    // fade-in and fade-out effect for headings and paragraphs
+    document.addEventListener("DOMContentLoaded", () => {
+        const elementsToObserve = document.querySelectorAll(".fade-in, .paragraph p, .fade-in-right");
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    } else {
+                        entry.target.classList.remove("visible"); // Remove class when out of view
+                    }
+                });
+            },
+            { threshold: .9 } // Trigger when 10% of the element is visible
+        );
+
+        elementsToObserve.forEach((el) => observer.observe(el));
+    });
+
+
+</script>
