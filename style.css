@@ -235,7 +235,7 @@ h2{
 }
 
 .card {
-    width: 40%;
+    width: 60%;
     background-color: #676e9c;
     border-radius: 15px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
@@ -250,7 +250,7 @@ h2{
 }
 
 .card:hover {
-    transform: translate(-50%, -50%) scale(1.1);
+    transform: translate(-50%, -50%) scale(1.2);
     box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3); 
 }
 
