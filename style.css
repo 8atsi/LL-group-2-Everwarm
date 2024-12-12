@@ -17,7 +17,7 @@ body {
 }
 
 .content {
-    margin-top: 1000px; /* Space for scrolling */
+    margin-top: 800px; /* Space for scrolling */
 
 }
 
@@ -258,7 +258,7 @@ ul{
 }
 
 .image-about {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
