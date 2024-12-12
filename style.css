@@ -25,7 +25,7 @@ h1 {
     text-align: center;
     color: #676e9c;
     text-decoration: none;
-    font-size: 150px;
+    font-size: 100px;
     margin: 200px 0; /* spacing between text */
     opacity: 0; /* Start hidden */
     transform: translateX(-10%); /* Slightly move down */
@@ -36,7 +36,7 @@ h1.right {
     text-align: center;
     color: #676e9c;
     text-decoration: none;
-    font-size: 150px;
+    font-size: 100px;
     margin: 200px; /* spacing between text */
     opacity: 0; /* Start hidden */
     transform: translateX(10%); /* Slightly move down */
@@ -165,8 +165,17 @@ ul{
     background-color: #676e9c;
 
 }
-.section2{
+.section2 {
     background-color: #4e547e;
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Vertical alignment */
+    justify-content: center; /* Horizontal alignment */
+    text-align: center;
+    min-height: 30vh; /* Ensures it takes the full viewport height */
+}
+
+.section3{
+    background-color: #2f3355;
 
 }
 
@@ -207,7 +216,13 @@ ul{
     margin-bottom: 20px;
     color: #000000;
     opacity: 20%;
+    text-align: center;
 }
+.youtube {
+    max-width: 600px; 
+    width: 100%; 
+}
+
 
 .youtube h2 {
     font-size: 2.5rem;
@@ -419,4 +434,68 @@ h2{
 
 .button.youtube:hover {
     background-color: #ff6c6c;
+}
+
+h3{
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    color: #f9f9f6;
+    font-weight: 700;
+    opacity: 100%;
+    text-shadow: 10px 20px 30px rgb(63, 63, 63);
+}
+
+.section3 p{
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #f9f9f6;
+    opacity: 20%;
+}
+
+.expanding-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+.card-container {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-item {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    height: 300px;
+    cursor: pointer;
+    transition: flex 0.4s ease-in-out, transform 0.4s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card-item h3 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.card-item:hover {
+    flex: 3;
+    transform: scale(1.05);
+}
+
+.card-item:hover h3 {
+    opacity: 1;
 }
